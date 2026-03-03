@@ -1,40 +1,25 @@
 import java.util.Scanner;
 
-public class UseCase2PalindromeCheckerApp {
-
-    private static final String APP_VERSION = "1.1.0";
+public class UseCase3PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("====================================");
-        System.out.println("     PALINDROME CHECKER APP");
-        System.out.println("====================================");
+        System.out.print("Enter a string: ");
+        String original = scanner.nextLine();
 
-        System.out.println("Application Version : " + APP_VERSION);
-        System.out.println("====================================");
+        String reversed = "";
 
-        System.out.print("Enter a word: ");
-        String word = scanner.nextLine();
-
-        System.out.println("Checking word: " + word);
-
-        String reversedWord = "";
-
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversedWord = reversedWord + word.charAt(i);
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
 
-        if (word.equals(reversedWord)) {
-            System.out.println(word + " is a Palindrome.");
+        if (original.equals(reversed)) {
+            System.out.println("The given string \"" + original + "\" is a PALINDROME.");
         } else {
-            System.out.println(word + " is NOT a Palindrome.");
+            System.out.println("The given string \"" + original + "\" is NOT a palindrome.");
         }
-
-        System.out.println("====================================");
-        System.out.println("Program execution completed.");
-        System.out.println("====================================");
 
         scanner.close();
     }
